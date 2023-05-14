@@ -6,7 +6,6 @@ public class Factorial {
     }
 
     public static int FactorialValue(int i){
-        int temp=0;
         if(i==0){
             return 1;
         }else{

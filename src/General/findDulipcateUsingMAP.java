@@ -17,7 +17,7 @@ public class findDulipcateUsingMAP {
             }
         }
         map.entrySet().forEach(e->{
-            if(map.get(e.getKey())>1){
+                if(e.getValue()>1){
                 System.out.println(e.getKey()+"--------->"+e.getValue());
             }
         });

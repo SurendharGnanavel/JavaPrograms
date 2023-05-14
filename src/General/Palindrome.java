@@ -11,11 +11,7 @@ public class Palindrome {
     public static boolean isPalindrome(String s){
         StringBuffer sb = new StringBuffer(s);
         String reverseString = sb.reverse().toString();
-        if(reverseString.equals(s)) {
-            return true;
-        }else{
-             return false;
-        }
+        return reverseString.equals(s);
     }
 
     public static boolean isPalindromeList(String s){
@@ -27,10 +23,6 @@ public class Palindrome {
                 charList.add(s.charAt(i));
             }
         }
-        if(((charList.isEmpty() && s.length()%2==0))|| (charList.size()==1 && s.length()%2==1)){
-            return true;
-        }else{
-            return false;
-        }
+        return ((charList.isEmpty() && s.length() % 2 == 0)) || (charList.size() == 1 && s.length() % 2 == 1);
     }
 }
