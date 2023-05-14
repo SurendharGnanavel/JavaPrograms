@@ -13,12 +13,12 @@ public class sumofArray {
 
     public static void sumofArrays(int[] a, int sum){
         ArrayList<Integer> intList = new ArrayList<>();
-        for(int i=0;i<a.length;i++){
-            int temp = sum-a[i];
-            if(intList.contains(temp)){
-                System.out.println(a[i]+"-----------"+temp);
+        for (int j : a) {
+            int temp = sum - j;
+            if (intList.contains(temp)) {
+                System.out.println(j + "-----------" + temp);
             }
-            intList.add(a[i]);
+            intList.add(j);
         }
     }
 }

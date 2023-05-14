@@ -15,11 +15,7 @@ public class AmstrongNumber {
             temp2 = temp2+(r*r*r);
             num =num/10;
         }
-        if(temp2==temp){
-            return true;
-        }else{
-            return false;
-        }
+        return temp2 == temp;
 
     }
 }
