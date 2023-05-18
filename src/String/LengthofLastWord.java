@@ -1,4 +1,4 @@
-package Arrays;
+package String;
 
 public class LengthofLastWord {
     public static void main(String[] args) {
