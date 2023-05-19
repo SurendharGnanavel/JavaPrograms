@@ -17,6 +17,8 @@ public class get3rdLargestElement {
     }
 
 
+    //Implementation 1  using TreeSet
+
     public static int returnlargestElement(int[] a, int index){
         TreeSet<Integer> ts = new TreeSet<>();
         Arrays.stream(a).forEach(e->ts.add(e));
@@ -24,6 +26,8 @@ public class get3rdLargestElement {
         return ll.get(ll.size()-index);
     }
 
+
+    //Implementation 2 using ArrayList
     public static int returnlargest(int a[],int index){
         ArrayList<Integer> al =new ArrayList<>();
                 Arrays.stream(a).forEach(e->al.add(e));
@@ -46,6 +50,7 @@ public class get3rdLargestElement {
     }
 
 
+    // Implementation 3 using while loop and 1 for loop
     public static void findlargestwithIndex(int [] a,int index){
         int prev =0,current;
         while(index>0){
@@ -64,6 +69,10 @@ public class get3rdLargestElement {
 
     }
 
+    // Given Array and asked to find the 3rd largest number in unsorted array
+    //  1. Given solution with multiple ways suing Treeset
+    //  2. Using ArryList AND Collections.sort
+    //  3. then he asked to implement using o(n) -> used partial BubbleSort (used only a first for loop and retrieved the largest number
 
 
 
