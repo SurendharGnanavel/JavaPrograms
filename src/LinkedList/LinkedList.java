@@ -29,7 +29,9 @@ public class LinkedList {
         Node loopNode = new Node(20);
         addNodeatLast(loopNode);
         loopNode.next = head.next;
-        System.out.println(isloopAvailableinLL());
+        System.out.println("Before Loop Removal---->"+isloopAvailableinLL());
+        removeLinkedListLoop();
+        System.out.println("After Loop Removal---->"+isloopAvailableinLL());
 
     }
     public static void displayAllNode(){
@@ -122,4 +124,17 @@ public class LinkedList {
         }
         return false;
     }
+    public static void removeLinkedListLoop(){
+        HashSet<Integer> llData = new HashSet<>();
+        Node current = head;
+        Node prev =null;
+        while(current!=null){
+            if (! llData.add(current.a)) {
+                prev.next =null;
+            }
+            prev = current;
+            current =current.next;
+        }
+    }
+
 }
