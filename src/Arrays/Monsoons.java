@@ -19,8 +19,9 @@ public class Monsoons {
         //5,1,2,3,4
         //4,5,1,2,3
 
-        rotate(a,2);
-
+//        rotate(a,2);
+        rotateArray(a,3);
+        Arrays.stream(a).forEach(e-> System.out.println(e));
 
 
     }
@@ -38,6 +39,20 @@ public class Monsoons {
 
         }
         Arrays.stream(a).forEach(e->System.out.println(e));
+    }
+
+
+    /// Rotate Array -> with help of Index we can able to rotate n no of times
+    public static void rotateArray(int a[],int index){
+        while(index>0) {
+            int temp = a[a.length - 1];
+            for (int i = a.length - 1; i > 0; i--) {
+                a[i] = a[i - 1];
+            }
+            a[0] = temp;
+            index--;
+        }
+
     }
 
     ///
