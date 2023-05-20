@@ -24,15 +24,30 @@ public class BinaryTree {
         TreeNode fourth = new TreeNode(4);
         TreeNode fifth = new TreeNode(5);
         TreeNode sixth = new TreeNode(6);
-        TreeNode seventh = new TreeNode(7);
+        TreeNode Seventh = new TreeNode(7);
+        TreeNode eigth = new TreeNode(8);
+        TreeNode ninth = new TreeNode(9);
+        TreeNode tenth = new TreeNode(10);
+        TreeNode eleventh = new TreeNode(11);
+        TreeNode twelenth = new TreeNode(12);
+        TreeNode thirtheen = new TreeNode(13);
         root = first;
         first.left = second;
         first.right = third;
         second.left = fourth;
         second.right = fifth;
-        third.right = sixth;
-        third.left = seventh;
+        third.right = Seventh;
+        third.left = sixth;
+        fourth.left = eigth;
+        fourth.right = ninth;
+        fifth.left = tenth;
+        sixth.left = eleventh;
+        Seventh.left =twelenth;
+        Seventh.right=thirtheen;
     }
+
+/*    Pre-Traversal means starts from Root node as a first traversal to root to left then keep on Left until .left ==null
+    then it will start from right then it traverse to right.next*/
 
     public void preOrderTravesal(TreeNode root){
         if(root==null){
@@ -117,13 +132,17 @@ public class BinaryTree {
     public static void main(String[] args) {
         BinaryTree bt =  new BinaryTree();
         bt.createTreeNode();
+        System.out.println("PreOrder Traversal ------->");
         bt.preOrderTravesal(bt.root);
+        System.out.println("LevelOrder Traversal ------->");
         bt.levelOrderTravesal(bt.root);
         System.out.println();
         System.out.println(bt.isBalancedBinaryTree(bt.root));
         System.out.println(bt.depthofTree(bt.root));
+        System.out.println("InOrder Traversal ------->");
         bt.inOrderTravesal(bt.root);
         System.out.println();
+        System.out.println("PostOrder Traversal ------->");
         bt.postOrderTravesal(bt.root);
     }
 

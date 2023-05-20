@@ -2,7 +2,7 @@ package Arrays;
 
 import java.util.Arrays;
 import java.util.TreeMap;
-import java.util.TreeSet;
+
 
 //Cisco 2nd Round interview Questions
 public class Monsoons {
@@ -15,7 +15,7 @@ public class Monsoons {
         tm.put(10,"Winter");
         System.out.println(tm.get(tm.floorKey(3)));
 
-        int a[] ={1,2,3,4,5};
+        int[] a ={1,2,3,4,5};
         //5,1,2,3,4
         //4,5,1,2,3
 
@@ -38,7 +38,7 @@ public class Monsoons {
             }
 
         }
-        Arrays.stream(a).forEach(e->System.out.println(e));
+        Arrays.stream(a).forEach(System.out::println);
     }
 
 
