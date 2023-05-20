@@ -34,6 +34,7 @@ public class LinkedList {
         System.out.println("After Loop Removal---->"+isloopAvailableinLL());
 
     }
+   /* this Method will print all the Node values from Head*/
     public static void displayAllNode(){
         Node Current = head;
         while(Current!=null){
@@ -50,6 +51,8 @@ public class LinkedList {
         }
         current.next = a;
     }
+
+    /*This Method will create a Node at the end of the LinkedList*/
     public static void CreateNode(int a){
         Node current  = null;
         if(head==null){
@@ -62,7 +65,7 @@ public class LinkedList {
             current.next = new Node(a);
         }
     }
-
+    /*This Method will do the Reversal of LinkedList, as it travese from head Node to last Node*/
     public static void reverseLinkedList(){
        Node Current =  head;
        Node prev =null;
@@ -111,7 +114,7 @@ public class LinkedList {
         head = odd;
     }
 
-
+/*    this method to return true if it found the loop in the LinkedList and return it doesn't have the loop in it*/
 
     public static boolean isloopAvailableinLL(){
         HashSet<Integer> llData = new HashSet<>();
@@ -124,6 +127,9 @@ public class LinkedList {
         }
         return false;
     }
+
+   /* Identify the LinkedList Loop using HashSet if we try to add same element twice in Set, and it returns a false
+    We also had a another Node as Prev and it stores the Previous Node and resetting the Node.next to Null to break the loop.*/
     public static void removeLinkedListLoop(){
         HashSet<Integer> llData = new HashSet<>();
         Node current = head;
