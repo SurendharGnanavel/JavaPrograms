@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.HashSet;
+
 public class LinkedList {
 
     static Node head=null;
@@ -22,8 +24,13 @@ public class LinkedList {
         displayAllNode();
         reverseLinkedList();
         displayAllNode();
-        arrageOddEvenLinkedList();
+//        arrageOddEvenLinkedList();
         displayAllNode();
+        Node loopNode = new Node(20);
+        addNodeatLast(loopNode);
+        loopNode.next = head.next;
+        System.out.println(isloopAvailableinLL());
+
     }
     public static void displayAllNode(){
         Node Current = head;
@@ -32,6 +39,14 @@ public class LinkedList {
             Current = Current.next;
         }
 
+    }
+
+    public static void addNodeatLast(Node a){
+        Node current =  head;
+        while (current.next!=null){
+            current = current.next;
+        }
+        current.next = a;
     }
     public static void CreateNode(int a){
         Node current  = null;
@@ -92,5 +107,19 @@ public class LinkedList {
         }
         temp.next = even;
         head = odd;
+    }
+
+
+
+    public static boolean isloopAvailableinLL(){
+        HashSet<Integer> llData = new HashSet<>();
+        Node current = head;
+        while(current!=null){
+            if (! llData.add(current.a)) {
+                return true;
+            }
+            current =current.next;
+        }
+        return false;
     }
 }
