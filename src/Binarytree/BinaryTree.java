@@ -67,6 +67,21 @@ public class BinaryTree {
         inOrderTravesal(root.right);
     }
 
+    public void createBST(){
+        TreeNode one = new TreeNode(1);
+        TreeNode second = new TreeNode(2);
+        TreeNode third = new TreeNode(3);
+        TreeNode fourth = new TreeNode(4);
+        TreeNode fifth = new TreeNode(5);
+        TreeNode sixth = new TreeNode(6);
+        root =fourth;
+        fourth.left=second;
+        fourth.right =fifth;
+        second.left = one;
+        second.right =third;
+        fifth.right = sixth;
+    }
+
     public void postOrderTravesal(TreeNode root){
         if(root==null){
             return;
@@ -144,7 +159,33 @@ public class BinaryTree {
         System.out.println();
         System.out.println("PostOrder Traversal ------->");
         bt.postOrderTravesal(bt.root);
+        System.out.println("BST ------------------->");
+        bt.createBST();
+        if(bt.isBST()){
+            System.out.println("its a Valid BST");
+        }else{
+            System.out.println("its not a Valid BST");
+        }
+
     }
 
+
+
+    public boolean isBST(){
+        return isBSTUtils(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+    }
+
+    public boolean isBSTUtils(TreeNode node,int min, int max){
+        if(node ==null){
+            return true;
+        }
+
+        if(node.data<min ||node.data>max){
+            return false;
+        }
+
+        return (isBSTUtils(node.left,min, node.data-1) &&
+                isBSTUtils(node.right, node.data+1, max));
+    }
 
 }
